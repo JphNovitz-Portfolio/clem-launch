@@ -1,11 +1,15 @@
 <template>
     <div>
-        <div class="text-center">
+        <div class="">
           <img src="" />
-            <transition-group tag="ul" name="slider">
-            <li v-for="product in products" :key="product"><i class="fa-li fa fa-hashtag" aria-hidden="true"></i>{{product}}</li>
-            </transition-group>
-          
+              
+            <div class="container-word" v-for="(product, index) in products"  :key="product" > 
+              <div v-show="products[index].showMe">
+                <i class="" aria-hidden="true"></i>
+               {{product.text}}
+              </div>
+            </div>
+            
         </div>
     </div>
 </template>
@@ -15,13 +19,30 @@ export default {
   name: 'products',
   data () {
     return {
+      inter: '',
       products: [
-        'Pain soleil au sésame',
-        'Potages de saison',
-        'Sandwiches garnis fait maison',
-        'Service traiteur pour réunions entre amis , anniversaires, fêtes d\'entreprises.'
-
+        { 'id': 1, 'text': 'Pain soleil au sésame', 'showMe': false },
+        { 'id': 2, 'text': 'Potages de saison', 'showMe': false },
+        { 'id': 3, 'text': 'Sandwiches garnis fait maison', 'showMe': false },
+        { 'id': 4, 'text': 'Service traiteur pour réunions entre amis , anniversaires, fêtes d\'entreprises.', 'showMe': false }
       ]
+    }
+  },
+  computed: { },
+  created () {
+    let i = 0
+    this.inter = setInterval(() => {
+      this.showIt(this.products[i], i)
+      i++
+      if (i === this.products.length) {
+        clearInterval(this.inter)
+      }
+    }, 3000
+    )
+  },
+  methods: {
+    showIt: function (element, i) {
+      element.showMe = true
     }
   }
 }
@@ -49,4 +70,8 @@ li {
   transform: translateX(10px);
   opacity: 0;
 }
+.container-word{
+   display: flex;
+}
+
 </style>

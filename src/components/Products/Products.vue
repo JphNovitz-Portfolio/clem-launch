@@ -2,14 +2,16 @@
     <div>
         <div class="">
           <img src="" />
-              
-            <div class="container-word" v-for="(product, index) in products"  :key="product" > 
-              <div v-show="products[index].showMe">
-                <i class="" aria-hidden="true"></i>
-               {{product.text}}
-              </div>
+            <div class="container-word" >
+              <div v-for="(product, index) in products"  :key="product" > 
+                <transition name="slide">
+                  <div v-show="products[index].showMe" class="word">
+                      <i class="" aria-hidden="true"></i>
+                      {{product.text}}
+                  </div>
+              </transition>
             </div>
-            
+          </div>
         </div>
     </div>
 </template>
@@ -24,7 +26,10 @@ export default {
         { 'id': 1, 'text': 'Pain soleil au sésame', 'showMe': false },
         { 'id': 2, 'text': 'Potages de saison', 'showMe': false },
         { 'id': 3, 'text': 'Sandwiches garnis fait maison', 'showMe': false },
-        { 'id': 4, 'text': 'Service traiteur pour réunions entre amis , anniversaires, fêtes d\'entreprises.', 'showMe': false }
+        { 'id': 4, 'text': 'Service traiteur', 'showMe': false },
+        { 'id': 5, 'text': 'Réunions entre amis ', 'showMe': false },
+        { 'id': 6, 'text': 'Anniversaires', 'showMe': false },
+        { 'id': 7, 'text': 'Fêtes d\'entreprises.', 'showMe': false }
       ]
     }
   },
@@ -37,7 +42,7 @@ export default {
       if (i === this.products.length) {
         clearInterval(this.inter)
       }
-    }, 3000
+    }, 1200
     )
   },
   methods: {
@@ -59,19 +64,26 @@ li {
   text-align: left;
 }
 
-.slide-fade-enter-active {
-  transition: all .3s ease;
+.slide-enter-active {
+  transition: opacity .9s ease;
 }
-.slide-fade-leave-active {
-  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-}
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active below version 2.1.8 */ {
-  transform: translateX(10px);
+.slide-enter {
   opacity: 0;
 }
 .container-word{
-   display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.word {
+  padding: 0.5em;
+  background-color: rgba(249,191,89, .2);
+  color: rgb(235,94,0);
+  font-size: large;
+  border-radius: 10px;
+  margin: .5em;
 }
 
 </style>

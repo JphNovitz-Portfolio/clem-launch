@@ -1,17 +1,21 @@
 <template>
     <div>
-        <div class="text-center">
-          <p>
-           <span class="color-orange">{{opening}}</span>
-          <br /><strong>{{phone}}</strong>
-          
-          </p>
-          <p>
-            <a v-bind:href="facebook"><i class="fa fa-facebook-official icon text-success" aria-hidden="true"></i></a>
-            <a v-bind:href="instagram"><i class="fa fa-instagram icon text-success" aria-hidden="true"></i></a>
+        <div class="row">
+          <div class="col-lg-12 col-md-6 text-center">
+            <p>
+            <span class="color-orange">{{opening}}</span>
+            <br /><strong>{{phone}}</strong>
+            
+            </p>
+            <p>
+              <a v-bind:href="facebook"><i class="fa fa-facebook-official icon text-success" aria-hidden="true"></i></a>
+              <a v-bind:href="instagram"><i class="fa fa-instagram icon text-success" aria-hidden="true"></i></a>
 
-          </p>
-          <img src="./la_clementine_sandwiches.jpg" />
+            </p>
+          </div>
+          <div class="col-lg-12 col-md-6 text-center">
+            <img src="./la_clementine_sandwiches.jpg" />
+          </div>
         </div>
     </div>
 </template>

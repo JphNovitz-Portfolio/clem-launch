@@ -2,7 +2,7 @@
 <div>
     <h2 class="color-orange">{{subtitle}}</h2>
     <h1>{{title}}</h1>
-    <h3 class="bg-warning warning">{{warning}}</h3>
+    <h3 class="warning">{{warning}}</h3>
 </div>
 </template>
 
@@ -21,7 +21,9 @@ export default {
 
 <style scoped>
 .warning {
+  background-color: rgba(243,106,34,.8) ;
+  color: #fff;
   padding: 1em;
-  border-radius: 10px;
+  border-radius: 50px;
 }
 </style>

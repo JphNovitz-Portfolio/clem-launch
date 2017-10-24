@@ -1,18 +1,46 @@
 <template>
   <div id="app">
    <div class="container">
-     <div class="row">
-       <div class="col-lg-3">
-         <logo></logo>
-         <contact></contact>
-       </div>
-       <div class="col-lg-9">
-          <head-title></head-title>
-          <products></products>
-       </div>
-     </div>
-   </div>
-  </div>
+      <section id="one" v-bind:class="{ oneUp: oneUp }" >
+        <div class="row">
+          <div class="col-lg-3 col-sm-12">
+            <div class="row">
+              <logo class="col-lg-12 col-sm-4" ></logo>
+              <contact class="col-lg-12 col-sm-8"></contact>
+              <div class="spacer"> </div>
+          </div>
+          </div>
+          <div class="spacer"> </div>
+          <div class="col-lg-9 col-md-12">
+              <head-title></head-title>
+              <div class="spacer"> </div>
+              <products></products>
+          </div>
+        </div> <!-- row-->
+        <div class="row button-bottom" >
+              <div class="col-lg-12 " ><button class="btn btn-info" @click="oneUp = !oneUp">click</button></div>
+        </div>
+      </section>
+      <section id="two">
+        <div class="row">
+          <div class="col-lg-3 col-sm-12">
+            <div class="row">
+              <logo class="col-lg-12 col-sm-4" ></logo>
+              <contact class="col-lg-12 col-sm-8"></contact>
+              <div class="spacer"> </div>
+          </div>
+          </div>
+          <div class="spacer"> </div>
+          <div class="col-lg-9 col-md-12">
+              <h2>Ici promotion</h2>
+          </div>
+        </div> <!-- row-->
+        <div class="row button-bottom" >
+              <div class="col-lg-12 " ></div>
+        </div>
+      </section>
+      </div> <!-- container -->
+  </div> <!-- app -->
 </template>
 
 <script>
@@ -28,11 +56,20 @@ export default {
     contact,
     HeadTitle,
     products
+  },
+  data () {
+    return {
+      oneUp: false
+    }
   }
 }
 </script>
 
 <style>
+
+.container {
+  overflow: hidden;
+}
 
 #app {
   font-family: 'NK_Monotype Corsiva', Helvetica, Arial, sans-serif;
@@ -43,8 +80,42 @@ export default {
   margin-top: 60px;
 }
 
+#one {
+  height: 100vh ;
+  position: relative;
+  
+}
+
+.button-bottom {
+  position: absolute;
+  bottom: 11vh;
+  left: 40vw;
+}
+
+.oneUp {
+  margin-top: -101vh;
+  transition: all .9s
+}
 .color-orange {
       background-color: inherit;
       color: #EB5E00;
   }
+
+.spacer {
+  min-height: 2vh;
+  display: none;
+}
+
+.slide-enter-active {
+  transition: opacity 2s
+}
+.slide-enter {
+  opacity: 0
+}
+
+ @media only screen and (min-width:800px) {
+ .spacer {
+   display: block;
+ }
+}
 </style>

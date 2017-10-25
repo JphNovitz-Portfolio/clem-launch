@@ -23,9 +23,9 @@ export default {
     return {
       inter: '',
       products: [
-        { 'id': 1, 'text': 'Pain soleil au sésame', 'showMe': false },
+        { 'id': 1, 'text': 'Pain soleil aux sésames', 'showMe': false },
         { 'id': 2, 'text': 'Potages de saison', 'showMe': false },
-        { 'id': 3, 'text': 'Sandwiches garnis fait maison', 'showMe': false },
+        { 'id': 3, 'text': 'Sandwichs garnis fait maison', 'showMe': false },
         { 'id': 4, 'text': 'Service traiteur', 'showMe': false },
         { 'id': 5, 'text': 'Réunions entre amis ', 'showMe': false },
         { 'id': 6, 'text': 'Anniversaires', 'showMe': false },

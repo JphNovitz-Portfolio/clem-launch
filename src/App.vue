@@ -21,7 +21,7 @@
               <div class="col-lg-12 " ><button class="btn btn-info" @click="oneUp = !oneUp">click</button></div>
         </div>
       </section>
-      <section id="two">
+      <section id="two" class=" bg-green">
         <div class="row">
           <div class="col-lg-3 col-sm-12">
             <div class="row">
@@ -32,7 +32,7 @@
           </div>
           <div class="spacer"> </div>
           <div class="col-lg-9 col-md-12">
-              <h2>Ici promotion</h2>
+              <offer></offer>
           </div>
         </div> <!-- row-->
         <div class="row button-bottom" >
@@ -48,6 +48,7 @@ import logo from './components/logo/Logo'
 import contact from './components/contact/Contact'
 import HeadTitle from './components/HeadTitle'
 import products from './components/Products/Products'
+import offer from './components/Offer'
 
 export default {
   name: 'app',
@@ -55,7 +56,8 @@ export default {
     logo,
     contact,
     HeadTitle,
-    products
+    products,
+    offer
   },
   data () {
     return {
@@ -68,6 +70,8 @@ export default {
 <style>
 
 .container {
+  height: 100vh ;
+  min-height: 100vh;
   overflow: hidden;
 }
 
@@ -80,9 +84,11 @@ export default {
   margin-top: 60px;
 }
 
-#one {
+#one, #two {
   height: 100vh ;
+  min-height: 100vh;
   position: relative;
+  padding: 1em 0;
   
 }
 
@@ -106,11 +112,9 @@ export default {
   display: none;
 }
 
-.slide-enter-active {
-  transition: opacity 2s
-}
-.slide-enter {
-  opacity: 0
+.bg-green {
+  background-color: rgba(40,167,69, .1) ;
+  color:  rgb(40,167,69) ;
 }
 
  @media only screen and (min-width:800px) {

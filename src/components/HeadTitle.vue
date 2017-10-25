@@ -13,7 +13,7 @@ export default {
     return {
       title: 'La Clémentine aura le plaisir de vous faire découvrir ses délices:',
       subtitle: 'Dès le 6 novembre 2017',
-      warning: 'Une douceur sucrée maison offerte à l\'achat d\'un sandwiche pour tous détenteur de ce bon (offre valable uniquement du 6 au 30 novembre 2017)  '
+      warning: 'Une douceur sucrée maison offerte à l\'achat d\'un sandwich pour tout détenteur de ce bon (offre valable uniquement du 6 au 30 novembre 2017)  '
     }
   }
 }

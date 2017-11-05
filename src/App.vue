@@ -1,5 +1,6 @@
 <template>
-  <div id="app">
+
+  <div id="app" itemscope itemtype="">
    <div class="container">
       <section id="one" v-bind:class="{ oneUp: oneUp }" >
         <div class="row">
@@ -18,7 +19,10 @@
           </div>
         </div> <!-- row-->
         <div class="row button-bottom" >
-              <div class="col-lg-12 " ><button class="btn btn-info" @click="oneUp = !oneUp">click</button></div>
+              <div class="col-lg-12 text-center" style="display: none" >
+                <button class="btn btn-info" @click="oneUp = !oneUp">
+                  Offre Spéciale
+                </button></div>
         </div>
       </section>
       <section id="two" class=" bg-green">
@@ -92,10 +96,10 @@ export default {
   
 }
 
-.button-bottom {
-  position: absolute;
-  bottom: 11vh;
-  left: 40vw;
+
+.button-bottom .btn-info {
+  margin-top: 10vw;
+  margin-left: 10vw;
 }
 
 .oneUp {
@@ -117,9 +121,23 @@ export default {
   color:  rgb(40,167,69) ;
 }
 
- @media only screen and (min-width:800px) {
+ @media only screen and (max-width:1025px) {
  .spacer {
    display: block;
+   min-height: 10vh;
+ }
+}
+
+ @media only screen and (max-width:800px) {
+ .spacer {
+   display: block;
+ }
+}
+
+@media only screen and (max-width:600px) {
+ .spacer {
+   display: block;
+   min-height: 20vh;
  }
 }
 </style>

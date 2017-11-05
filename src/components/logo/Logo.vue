@@ -1,10 +1,13 @@
 <template>
     <div>
         <div class="text-center">
-          <img src="./Klogo_clem.png" />
+          <img src="./Klogo_clem.png" itemprop="logo" />
           <p>
+          <span itemprop="legalName">La Clémentine <br /></span>
+          <span itemprop="location">
           {{street}}
           <br />{{location}}
+          </span>
           </p>
         </div>
     </div>
